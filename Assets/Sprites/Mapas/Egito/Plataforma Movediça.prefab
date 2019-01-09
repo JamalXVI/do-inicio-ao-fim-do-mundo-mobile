@@ -101,7 +101,7 @@ GameObject:
   - component: {fileID: 4428589284145518}
   - component: {fileID: 95211229686213412}
   m_Layer: 10
-  m_Name: Plat (1)
+  m_Name: "Plataforma Movedi\xE7a"
   m_TagString: Chao
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
