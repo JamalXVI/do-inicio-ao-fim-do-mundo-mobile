@@ -1,0 +1,122 @@
+fileFormatVersion: 2
+guid: ed1a82e531f6e4c40810b5223a87df98
+timeCreated: 1438041047
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Circilo_0
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings:
+  - buildTarget: Standalone
+    maxTextureSize: 1024
+    textureFormat: -1
+    compressionQuality: 50
+    allowsAlphaSplitting: 0
+  spriteSheet:
+    sprites:
+    - name: Circilo_0
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 129
+        width: 1830
+        height: 1795
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 259.21677, y: -192.38501}
+        - {x: 312.21677, y: -95.38501}
+        - {x: 324.21677, y: 1.6149902}
+        - {x: 324.21677, y: 33.61499}
+        - {x: 305.21677, y: 130.61499}
+        - {x: 250.21677, y: 204.61499}
+        - {x: 239.21677, y: 228.61499}
+        - {x: 214.21677, y: 238.61499}
+        - {x: 147.21677, y: 290.615}
+        - {x: 54.216766, y: 318.615}
+        - {x: -13.783234, y: 318.615}
+        - {x: -78.78323, y: 316.615}
+        - {x: -158.78323, y: 271.615}
+        - {x: -168.78323, y: 278.615}
+        - {x: -254.78323, y: 199.61499}
+        - {x: -253.78323, y: 193.61499}
+        - {x: -256.78323, y: 188.61499}
+        - {x: -310.78323, y: 106.61499}
+        - {x: -323.78323, y: 22.61499}
+        - {x: -323.78323, y: -42.38501}
+        - {x: -306.78323, y: -124.38501}
+        - {x: -242.78323, y: -222.38501}
+        - {x: -152.78323, y: -289.385}
+        - {x: -62.783234, y: -312.385}
+        - {x: -56.783234, y: -317.385}
+        - {x: 72.21677, y: -317.385}
+        - {x: 181.21677, y: -269.385}
+        - {x: 239.21677, y: -208.38501}
+      - - {x: -117.78323, y: -249.38501}
+        - {x: -182.78323, y: -210.38501}
+        - {x: -244.78323, y: -136.38501}
+        - {x: -266.78323, y: -80.38501}
+        - {x: -275.78323, y: -24.38501}
+        - {x: -271.78323, y: 46.61499}
+        - {x: -257.78323, y: 94.61499}
+        - {x: -192.78323, y: 190.61499}
+        - {x: -57.783234, y: 265.615}
+        - {x: -2.7832336, y: 270.615}
+        - {x: 64.21677, y: 265.615}
+        - {x: 176.21677, y: 212.61499}
+        - {x: 223.21677, y: 164.61499}
+        - {x: 267.21677, y: 77.61499}
+        - {x: 273.21677, y: -19.38501}
+        - {x: 254.21677, y: -101.38501}
+        - {x: 218.21677, y: -166.38501}
+        - {x: 158.21677, y: -222.38501}
+        - {x: 89.21677, y: -258.385}
+        - {x: -0.78323364, y: -274.385}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

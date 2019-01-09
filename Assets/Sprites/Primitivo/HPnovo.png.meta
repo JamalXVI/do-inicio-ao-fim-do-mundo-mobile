@@ -1,0 +1,406 @@
+fileFormatVersion: 2
+guid: 63129bd531cb357428cef58f3f0f58c1
+timeCreated: 1436223257
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Primitivo_LegUp
+    21300002: Primitivo_LegDown
+    21300004: Primitivo_Body
+    21300006: Primitivo_Head
+    21300008: Primitivo_FootR
+    21300010: Primitivo_EyeBrowR
+    21300012: Primitivo_EyeBrowL
+    21300014: Primitivo_Eyes
+    21300016: Primitivo_ArmUp
+    21300018: Primitivo_ArmDown
+    21300020: Primitivo_Cloth
+    21300022: Primitivo_HandL_Idle
+    21300024: Primitivo_HandR_Idle
+    21300026: Primitivo_SkirtFront
+    21300028: Primitivo_SkirtBack
+    21300030: Primitivo_FootL
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings:
+  - buildTarget: Standalone
+    maxTextureSize: 1024
+    textureFormat: -1
+    compressionQuality: 50
+    allowsAlphaSplitting: 0
+  spriteSheet:
+    sprites:
+    - name: Primitivo_LegUp
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 3780
+        width: 384
+        height: 1085
+      alignment: 9
+      pivot: {x: 0.5154021, y: 0.8652213}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -35.86189, y: 30.936646}
+        - {x: -40.86189, y: 27.936646}
+        - {x: -40.86189, y: -194.06335}
+        - {x: 8.138111, y: -194.06335}
+        - {x: 40.13811, y: -86.063354}
+        - {x: 40.13811, y: 25.936646}
+        - {x: 25.138111, y: 30.936646}
+    - name: Primitivo_LegDown
+      rect:
+        serializedVersion: 2
+        x: 868
+        y: 3867
+        width: 305
+        height: 817
+      alignment: 9
+      pivot: {x: 0.59695745, y: 0.89091545}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 21.059921, y: 18.764648}
+        - {x: -22.940079, y: 18.764648}
+        - {x: -37.94008, y: 9.764648}
+        - {x: -37.94008, y: -150.23535}
+        - {x: 1.0599213, y: -150.23535}
+        - {x: 5.0599213, y: -134.23535}
+        - {x: 26.059921, y: -41.23535}
+        - {x: 26.059921, y: 8.764648}
+    - name: Primitivo_Body
+      rect:
+        serializedVersion: 2
+        x: 1626
+        y: 3228
+        width: 916
+        height: 1511
+      alignment: 9
+      pivot: {x: 0.5710244, y: 0.07726332}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 82.19394, y: 119.6369}
+        - {x: 82.19394, y: 205.6369}
+        - {x: 71.19394, y: 242.6369}
+        - {x: 15.193939, y: 284.6369}
+        - {x: 7.193939, y: 288.6369}
+        - {x: -35.80606, y: 288.6369}
+        - {x: -43.80606, y: 286.6369}
+        - {x: -57.80606, y: 253.6369}
+        - {x: -90.80606, y: 248.6369}
+        - {x: -107.80606, y: 232.6369}
+        - {x: -107.80606, y: 178.6369}
+        - {x: -79.80606, y: 94.6369}
+        - {x: -80.80606, y: 27.636902}
+        - {x: -64.80606, y: -2.3630981}
+        - {x: -53.80606, y: -20.363098}
+        - {x: -35.80606, y: -24.363098}
+        - {x: 23.19394, y: -24.363098}
+        - {x: 62.19394, y: 3.6369019}
+        - {x: 78.19394, y: 29.636902}
+        - {x: 81.19394, y: 97.6369}
+    - name: Primitivo_Head
+      rect:
+        serializedVersion: 2
+        x: 1518
+        y: 1763
+        width: 1130
+        height: 1392
+      alignment: 9
+      pivot: {x: 0.4057883, y: 0.30030403}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -94.695404, y: -86.222015}
+        - {x: -85.695404, y: -86.222015}
+        - {x: -86.695404, y: -83.222015}
+        - {x: -91.695404, y: -81.222015}
+        - {x: -94.695404, y: -81.222015}
+      - - {x: 125.304596, y: 132.77798}
+        - {x: 100.304596, y: 173.77798}
+        - {x: 75.304596, y: 190.77798}
+        - {x: 33.304596, y: 202.77798}
+        - {x: 3.304596, y: 202.77798}
+        - {x: -13.695404, y: 199.77798}
+        - {x: -50.695404, y: 175.77798}
+        - {x: -64.695404, y: 156.77798}
+        - {x: -94.695404, y: 55.777985}
+        - {x: -94.695404, y: 8.777985}
+        - {x: -52.695404, y: -34.222015}
+        - {x: -38.695404, y: -53.222015}
+        - {x: 19.304596, y: -71.222015}
+        - {x: 36.304596, y: -86.222015}
+        - {x: 90.304596, y: -86.222015}
+        - {x: 98.304596, y: -84.222015}
+        - {x: 139.3046, y: -20.222015}
+        - {x: 139.3046, y: 46.777985}
+        - {x: 121.304596, y: 73.777985}
+    - name: Primitivo_FootR
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 3196
+        width: 472
+        height: 308
+      alignment: 9
+      pivot: {x: 0.2243287, y: 0.78804}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 21.180431, y: 14.87439}
+        - {x: -14.819569, y: 14.87439}
+        - {x: -20.819569, y: 12.87439}
+        - {x: -21.819569, y: 2.8743896}
+        - {x: -21.819569, y: -47.12561}
+        - {x: -11.819569, y: -50.12561}
+        - {x: 63.18043, y: -50.12561}
+        - {x: 77.180435, y: -44.12561}
+        - {x: 77.180435, y: -23.12561}
+        - {x: 73.180435, y: -20.12561}
+    - name: Primitivo_EyeBrowR
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 2823
+        width: 196
+        height: 93
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Primitivo_EyeBrowL
+      rect:
+        serializedVersion: 2
+        x: 631
+        y: 2872
+        width: 155
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Primitivo_Eyes
+      rect:
+        serializedVersion: 2
+        x: 461
+        y: 2484
+        width: 421
+        height: 206
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12.844994, y: 16.722412}
+        - {x: -18.844994, y: 17.722412}
+        - {x: -35.844994, y: 17.722412}
+        - {x: -43.844994, y: 15.722412}
+        - {x: -43.844994, y: -21.277588}
+        - {x: -8.844994, y: -21.277588}
+        - {x: -5.8449936, y: -14.277588}
+        - {x: -4.8449936, y: -10.277588}
+        - {x: -4.8449936, y: 5.722412}
+      - - {x: 39.155006, y: 22.722412}
+        - {x: 18.155006, y: 22.722412}
+        - {x: 10.155006, y: 14.722412}
+        - {x: 10.155006, y: -2.277588}
+        - {x: 15.155006, y: -12.277588}
+        - {x: 35.155006, y: -12.277588}
+        - {x: 44.155006, y: -10.277588}
+        - {x: 44.155006, y: 18.722412}
+    - name: Primitivo_ArmUp
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 1568
+        width: 751
+        height: 783
+      alignment: 9
+      pivot: {x: 0.8465163, y: 0.9078901}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -49.56105, y: 16.228088}
+        - {x: -131.56105, y: -101.77191}
+        - {x: -131.56105, y: -146.77191}
+        - {x: -80.56105, y: -146.77191}
+        - {x: 22.43895, y: -74.77191}
+        - {x: 24.43895, y: -67.77191}
+        - {x: 24.43895, y: 16.228088}
+    - name: Primitivo_ArmDown
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 682
+        width: 307
+        height: 654
+      alignment: 9
+      pivot: {x: 0.34587878, y: 0.8707807}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 22.272675, y: 18.719147}
+        - {x: -18.727325, y: 18.719147}
+        - {x: -21.727325, y: 12.719147}
+        - {x: -21.727325, y: -26.280853}
+        - {x: -14.727325, y: -71.28085}
+        - {x: 1.2726746, y: -111.28085}
+        - {x: 13.272675, y: -117.28085}
+        - {x: 36.272675, y: -117.28085}
+        - {x: 42.272675, y: -111.28085}
+        - {x: 42.272675, y: -79.28085}
+        - {x: 33.272675, y: -8.280853}
+    - name: Primitivo_Cloth
+      rect:
+        serializedVersion: 2
+        x: 914
+        y: 670
+        width: 819
+        height: 1136
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -44.341263, y: 117.79469}
+        - {x: -84.34126, y: -21.205307}
+        - {x: -84.34126, y: -117.20531}
+        - {x: 62.658737, y: -117.20531}
+        - {x: 85.65874, y: -102.20531}
+        - {x: 85.65874, y: 65.79469}
+        - {x: 70.65874, y: 98.79469}
+        - {x: 64.65874, y: 108.79469}
+        - {x: 39.658737, y: 117.79469}
+    - name: Primitivo_HandL_Idle
+      rect:
+        serializedVersion: 2
+        x: 842
+        y: 139
+        width: 254
+        height: 349
+      alignment: 9
+      pivot: {x: 0.68628, y: 0.7542015}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15.969101, y: 18.879059}
+        - {x: -35.9691, y: -1.1209412}
+        - {x: -35.9691, y: -40.12094}
+        - {x: -16.9691, y: -54.12094}
+        - {x: 9.030899, y: -54.12094}
+        - {x: 18.0309, y: -49.12094}
+        - {x: 18.0309, y: 14.879059}
+        - {x: 11.030899, y: 18.879059}
+    - name: Primitivo_HandR_Idle
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 86
+        width: 298
+        height: 373
+      alignment: 9
+      pivot: {x: 0.2618359, y: 0.80127025}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 30.93917, y: 16.55618}
+        - {x: -10.060829, y: 16.55618}
+        - {x: -16.06083, y: 7.556179}
+        - {x: -16.06083, y: -56.44382}
+        - {x: -5.060829, y: -61.44382}
+        - {x: 23.93917, y: -61.44382}
+        - {x: 45.93917, y: -49.44382}
+        - {x: 45.93917, y: -5.443821}
+    - name: Primitivo_SkirtFront
+      rect:
+        serializedVersion: 2
+        x: 2033
+        y: 270
+        width: 722
+        height: 489
+      alignment: 9
+      pivot: {x: 0.4672331, y: 0.7902775}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -63.48532, y: 22.431686}
+        - {x: -68.48532, y: 20.431686}
+        - {x: -69.48532, y: 9.431686}
+        - {x: -69.48532, y: -79.56831}
+        - {x: 44.51468, y: -79.56831}
+        - {x: 80.51468, y: -71.56831}
+        - {x: 80.51468, y: 22.431686}
+    - name: Primitivo_SkirtBack
+      rect:
+        serializedVersion: 2
+        x: 2058
+        y: 1011
+        width: 714
+        height: 494
+      alignment: 9
+      pivot: {x: 0.51656705, y: 0.7753676}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -68.14987, y: 24.102188}
+        - {x: -76.14987, y: -39.89781}
+        - {x: -76.14987, y: -77.89781}
+        - {x: -60.14987, y: -78.89781}
+        - {x: 72.85013, y: -78.89781}
+        - {x: 72.85013, y: 17.102188}
+        - {x: 46.85013, y: 24.102188}
+    - name: Primitivo_FootL
+      rect:
+        serializedVersion: 2
+        x: 951
+        y: 3235
+        width: 474
+        height: 310
+      alignment: 9
+      pivot: {x: 0.22549169, y: 0.74802405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13.34668, y: 17.365967}
+        - {x: -22.34668, y: -2.6340332}
+        - {x: -22.34668, y: -40.634033}
+        - {x: -18.34668, y: -45.634033}
+        - {x: -3.3466797, y: -47.634033}
+        - {x: 62.65332, y: -47.634033}
+        - {x: 76.65332, y: -42.634033}
+        - {x: 76.65332, y: -12.634033}
+        - {x: 41.65332, y: 17.365967}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

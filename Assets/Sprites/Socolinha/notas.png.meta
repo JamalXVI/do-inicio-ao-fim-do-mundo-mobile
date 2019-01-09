@@ -1,0 +1,139 @@
+fileFormatVersion: 2
+guid: d3b5651a54e2c3845a2c69d5449cc755
+timeCreated: 1437775081
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: notas2
+    21300002: notas3
+    21300004: notas1
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings:
+  - buildTarget: Standalone
+    maxTextureSize: 1024
+    textureFormat: -1
+    compressionQuality: 50
+    allowsAlphaSplitting: 0
+  spriteSheet:
+    sprites:
+    - name: notas2
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 416
+        width: 897
+        height: 944
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 118.874374, y: -109.835625}
+        - {x: 122.874374, y: -19.835625}
+        - {x: 122.874374, y: 129.16437}
+        - {x: 73.874374, y: 129.16437}
+        - {x: -83.125626, y: 81.164375}
+        - {x: -121.125626, y: -6.8356247}
+        - {x: -121.125626, y: -119.835625}
+        - {x: -117.125626, y: -127.835625}
+        - {x: -61.125626, y: -127.835625}
+        - {x: -37.125626, y: -111.835625}
+        - {x: 31.874374, y: -127.835625}
+        - {x: 67.874374, y: -127.835625}
+    - name: notas3
+      rect:
+        serializedVersion: 2
+        x: 1125
+        y: 64
+        width: 1361
+        height: 1333
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 7.681305, y: -150.66702}
+        - {x: 68.681305, y: -117.66702}
+        - {x: 95.681305, y: 98.33298}
+        - {x: 89.681305, y: -96.66702}
+        - {x: 119.681305, y: -110.66702}
+        - {x: 170.6813, y: -111.66702}
+        - {x: 185.6813, y: -98.66702}
+        - {x: 185.6813, y: -50.667023}
+        - {x: 164.6813, y: 181.33298}
+        - {x: 69.681305, y: 181.33298}
+        - {x: -31.318695, y: 161.33298}
+        - {x: -139.3187, y: 64.33298}
+        - {x: -143.3187, y: -81.66702}
+        - {x: -184.3187, y: -102.66702}
+        - {x: -184.3187, y: -180.66702}
+        - {x: -86.318695, y: -180.66702}
+        - {x: -75.318695, y: -153.66702}
+        - {x: -105.318695, y: 17.332977}
+        - {x: -30.318695, y: -138.66702}
+    - name: notas1
+      rect:
+        serializedVersion: 2
+        x: 2639
+        y: 265
+        width: 1047
+        height: 1012
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 143.21466, y: 138.26938}
+        - {x: 80.21466, y: 138.26938}
+        - {x: -32.78534, y: 123.26938}
+        - {x: -141.78534, y: -51.73062}
+        - {x: -141.78534, y: -115.73062}
+        - {x: -119.78534, y: -136.73062}
+        - {x: -17.78534, y: -136.73062}
+        - {x: 23.21466, y: -93.73062}
+        - {x: 115.21466, y: 31.269379}
+        - {x: 143.21466, y: 100.26938}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
