@@ -29,7 +29,7 @@ namespace Comum.Chao
         {
             var transforms = (from tr in GetComponentsInChildren<Transform>() where tr.parent == transform select tr);
             Posicoes = (from tr in transforms select tr.position).ToList();
-            var posicaoMin = transforms.Select(tr => tr.position.x -  tr.GetComponentsInChildren<SpriteRenderer>().Select(sp => sp.transform.localScale.x * sp.size.x).Sum()).Min();
+            var posicaoMin = transforms.Select(tr => tr.position.x - tr.localScale.x * tr.GetComponent<SpriteRenderer>().size.x).Min();
             var posicaoMax = transforms.Select(tr => tr.position.x).Max();
             float tamanhoDaImagem = GetComponentsInChildren<SpriteRenderer>().Select(sp => sp.size.x).Sum();
             float escala = GetComponentsInChildren<Transform>().Select(t => t.localScale.x).Max();
@@ -41,7 +41,7 @@ namespace Comum.Chao
         }
         void Update()
         {
-            var posicaoMax = this.Propriedades.Transforms.Select(tr => tr.position.x + tr.GetComponentsInChildren<SpriteRenderer>().Select(sp => sp.transform.localScale.x * sp.size.x).Sum()).Max();
+            var posicaoMax = this.Propriedades.Transforms.Select(tr => tr.position.x + tr.localScale.x * tr.GetComponent<SpriteRenderer>().size.x).Max();
             for (var index = 0; index < this.Propriedades.Transforms.Count; index++)
             {
                 var tr = this.Propriedades.Transforms.ElementAt(index);
