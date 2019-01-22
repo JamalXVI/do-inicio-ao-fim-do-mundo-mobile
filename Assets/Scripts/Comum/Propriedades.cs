@@ -1,29 +1,26 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 namespace Comum.Chao
 {
     public class Propriedades
     {
-        private readonly Vector3 _posicaoInicial;
-        public Vector3 PosicaoInicial
+
+        public float PosicaoMin { get; }
+
+        public float PosicaoMax { get; }
+
+        public List<Transform> Transforms { get; }
+
+        public float Escala { get; }
+
+        public Propriedades(float posicaoMin, float posicaoMax, List<Transform> transforms, float escala)
         {
-            get
-            {
-                return this._posicaoInicial;
-            }
-        }
-        private readonly float _tamanhoImagemReal;
-        public float TamanhoImagemReal
-        {
-            get
-            {
-                return this._tamanhoImagemReal;
-            }
-        }
-        public Propriedades(Vector3 posicaoInicial, float tamanhoImagemReal)
-        {
-            this._posicaoInicial = posicaoInicial;
-            this._tamanhoImagemReal = tamanhoImagemReal;
+            PosicaoMin = posicaoMin;
+            PosicaoMax = posicaoMax;
+            Transforms = transforms;
+            Escala = escala;
+
         }
     }
 }
