@@ -49,7 +49,6 @@ namespace Personagem
 
         private void RealizarAcoes()
         {
-            Debug.Log(EmPulo);
             if (!PosicaoInicialSetada)
             {
                 return;
@@ -107,7 +106,6 @@ namespace Personagem
                 AcionouAnimacaoPulo = true;
                 FinalizarAnimacaoPulo();
             }
-            Debug.Log(Vector2.Distance(PosicaoInicial, transform.position));
             if (Vector2.Distance(PosicaoInicial, transform.position) < 0.0006 && AcionouAnimacaoPulo)
             {
                 AcionouAnimacaoPulo = false;

@@ -11,6 +11,8 @@ namespace Comum.Chao
         public float PosicaoMax { get; }
 
         public List<Transform> Transforms { get; }
+        public List<bool> Escondido { get; }
+        public List<bool> Escondeu { get; }
 
         public float Escala { get; }
 
@@ -19,6 +21,8 @@ namespace Comum.Chao
             PosicaoMin = posicaoMin;
             PosicaoMax = posicaoMax;
             Transforms = transforms;
+            Escondido = new List<bool>(transforms.Count).RepetirPorPadrao();
+            Escondeu = new List<bool>(transforms.Count).RepetirPorPadrao();
             Escala = escala;
 
         }
