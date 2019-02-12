@@ -54,6 +54,6 @@ MonoBehaviour:
   _TempoParaDesaparecer: 5
   _MultiplicadoDificuldade: 0.05
   _RedutorDificuldade: 2
-  _TempoLimite: 0.5
+  _TempoLimite: 1
   _LimiteVisinhos: 2
   _UnidadeTempo: 0.5

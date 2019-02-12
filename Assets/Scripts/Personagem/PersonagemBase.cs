@@ -87,7 +87,7 @@ namespace Personagem
 
         protected internal void FixedUpdate()
         {
-            Debug.DrawLine(new Vector3(-100, AlturaMaxima, 0), new Vector3(100, AlturaMaxima, 0), Color.red);
+            //Debug.DrawLine(new Vector3(-100, AlturaMaxima, 0), new Vector3(100, AlturaMaxima, 0), Color.red);
             VerificarPosicoes();
         }
 

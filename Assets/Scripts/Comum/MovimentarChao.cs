@@ -1,6 +1,7 @@
 ﻿using Comum.Controladores;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -16,12 +17,15 @@ namespace Comum.Chao
 
         public List<Vector3> Posicoes { get; set; }
 
-        private float ContadorTempoChao = 0;
-        private float ContadorRedutor = 0;
-        private float TempoReduzido = 0f;
-        private float TempoRedutor = 0f;
-        private bool PararDeContarRedutor = false;
-        private int IdDoTileParaDesaparecer = 0;
+        private float contadorTempoChao = 0f;
+        private float contadorRedutor = 0f;
+        private float tempoReduzido = 0f;
+        private float tempoRedutor = 0f;
+        private bool pararDeContarRedutor = false;
+        private int idDoTileParaDesaparecer = 0;
+        private float posicaoMax = 0f;
+        private float novaPosicaoMax = 0f;
+        private float tamanhoQuadrado = 0f;
 
         public float Velocidade
         {
@@ -34,133 +38,157 @@ namespace Comum.Chao
 
         private void Awake()
         {
-            var transforms = (from tr in GetComponentsInChildren<Transform>() where tr.parent == transform select tr);
+            var transforms = (from tr in GetComponentsInChildren<Transform>() where tr.parent == transform select tr).ToList();
             Posicoes = (from tr in transforms select tr.position).ToList();
-            var posicaoMin = transforms.Select(tr => tr.position.x - tr.localScale.x * tr.GetComponent<SpriteRenderer>().size.x).Min();
+            tamanhoQuadrado = transforms.Select(tr => tr.localScale.x * tr.GetComponent<SpriteRenderer>().size.x).Max();
+            var posicaoMin = transforms.Select(tr => tr.position.x - tamanhoQuadrado).Min();
             var posicaoMax = transforms.Select(tr => tr.position.x).Max();
             float tamanhoDaImagem = GetComponentsInChildren<SpriteRenderer>().Select(sp => sp.size.x).Sum();
             float escala = GetComponentsInChildren<Transform>().Select(t => t.localScale.x).Max();
+            var sprites = from tr in transforms select tr.GetComponent<SpriteRenderer>();
+            var boxColliders = (from tr in transforms select tr.GetComponent<BoxCollider2D>()).ToList();
+            for(int i = 0; i < boxColliders.Count; i++)
+            {
+                for (int j = i+1; j < boxColliders.Count; j++)
+                {
+                    Physics2D.IgnoreCollision(boxColliders[i], boxColliders[j]);
+                }
+            }
             Propriedades = new Propriedades(
                 posicaoMin: posicaoMin,
                 posicaoMax: posicaoMax,
-                transforms: transforms.ToList(),
-                escala: escala);
+                transforms: transforms,
+                escala: escala,
+                sprites: sprites.ToList(),
+                boxColliders: boxColliders);
         }
 
         private void Start()
         {
-            TempoReduzido = Gerenciador.Instancia.ChaoConfig.TempoParaDesaparecer;
-            TempoRedutor = Gerenciador.Instancia.ChaoConfig.RedutorDificuldade;
+            tempoReduzido = Gerenciador.Instancia.ChaoConfig.TempoParaDesaparecer;
+            tempoRedutor = Gerenciador.Instancia.ChaoConfig.RedutorDificuldade;
         }
 
 
 
-        void Update()
+        void FixedUpdate()
         {
             CalcularParaOTempoDoChaoDesaparecer();
-            var posicaoMax = this.Propriedades.Transforms.Select(tr => tr.position.x + tr.localScale.x * tr.GetComponent<SpriteRenderer>().size.x).Max();
+            novaPosicaoMax = float.MinValue;
+            var posicaoMudar = Vector3.left * Time.deltaTime * this.Velocidade;
             for (var index = 0; index < this.Propriedades.Transforms.Count; index++)
             {
                 var tr = this.Propriedades.Transforms.ElementAt(index);
                 Vector3 pos = Posicoes.ElementAt(index);
                 if (tr.position.x < this.Propriedades.PosicaoMin * this.Propriedades.Escala)
                 {
-                    if(this.Propriedades.Escondido[index] && !this.Propriedades.Escondeu[index])
-                    {
-                        var verficarAtras = false;
-                        var verificarAFrente = false;
-                        bool pularDesativar = false;
-                        for (int j = 1; j < Gerenciador.Instancia.ChaoConfig.LimiteVisinhos+1; j++)
-                        {
-                            if (index-j > 0 && this.Propriedades.Escondeu[index - j])
-                            {
-                                if (verficarAtras)
-                                {
-                                    pularDesativar = true;
-                                    goto continuarDepoisDoFor;
-                                }
-                                else
-                                {
-                                    verficarAtras = true;
-                                }
-                            }
-                            if (index + j < this.Propriedades.Transforms.Count && this.Propriedades.Escondeu[index + j])
-                            {
-                                if (verificarAFrente)
-                                {
-                                    pularDesativar = true;
-                                    goto continuarDepoisDoFor;
-                                }
-                                else
-                                {
-                                    verificarAFrente = true;
-                                }
-                            }
-                        }
-                        continuarDepoisDoFor:
-                        if (!pularDesativar)
-                        {
-                            tr.GetComponent<SpriteRenderer>().enabled = false;
-                            tr.GetComponent<BoxCollider2D>().enabled = false;
-                            this.Propriedades.Escondeu[index] = true;
-                        }
-                        else
-                        {
-                            this.Propriedades.Escondido[index] = false;
-                            DefinirChaoParaEsconder();
-                        }
-                    }
-                    else if (this.Propriedades.Escondido[index] && this.Propriedades.Escondeu[index])
-                    {
-                        tr.GetComponent<SpriteRenderer>().enabled = true;
-                        tr.GetComponent<BoxCollider2D>().enabled = true;
-                        this.Propriedades.Escondido[index] = false;
-                        this.Propriedades.Escondeu[index] = false;
-                    }
-                    pos = new Vector3(posicaoMax, pos.y, pos.z);
+                    EscoderChao(index);
+                    pos.x = posicaoMax;
                 }
-                pos += Vector3.left * Time.deltaTime * this.Velocidade;
+                pos += posicaoMudar;
+                if (pos.x + tamanhoQuadrado > novaPosicaoMax)
+                {
+                    novaPosicaoMax = pos.x + tamanhoQuadrado;
+                }
                 tr.position = pos;
                 Posicoes[index] = pos;
             };
+            posicaoMax = novaPosicaoMax;
         }
+
 
         private void CalcularParaOTempoDoChaoDesaparecer()
         {
             CalcularTempoRedutor();
-            ContadorTempoChao += Time.deltaTime;
-            if (ContadorTempoChao >= TempoReduzido)
+            contadorTempoChao += Time.deltaTime;
+            if (contadorTempoChao >= tempoReduzido)
             {
-                ContadorTempoChao = 0;
+                contadorTempoChao = 0;
                 DefinirChaoParaEsconder();
             }
         }
 
         private void DefinirChaoParaEsconder()
         {
-            IdDoTileParaDesaparecer = Random.Range(0, this.Propriedades.Transforms.Count);
-            this.Propriedades.Escondido[IdDoTileParaDesaparecer] = true;
+            idDoTileParaDesaparecer = Random.Range(0, this.Propriedades.Transforms.Count);
+            this.Propriedades.Escondido[idDoTileParaDesaparecer] = true;
         }
 
         private void CalcularTempoRedutor()
         {
-            if (!PararDeContarRedutor)
+            if (!pararDeContarRedutor)
             {
-                ContadorRedutor += Time.deltaTime;
-                if (ContadorRedutor >= TempoRedutor)
+                contadorRedutor += Time.deltaTime;
+                if (contadorRedutor >= tempoRedutor)
                 {
-                    ContadorRedutor = 0;
-                    TempoRedutor -= TempoRedutor * Gerenciador.Instancia.ChaoConfig.MultiplicadoDificuldade * ((int)Gerenciador.Instancia.Dificuldade + 1);
-                    TempoReduzido -= Gerenciador.Instancia.ChaoConfig.UnidadeTempo;
-                    if (Gerenciador.Instancia.ChaoConfig.TempoLimite >= TempoReduzido)
+                    contadorRedutor = 0;
+                    tempoRedutor -= tempoRedutor * Gerenciador.Instancia.ChaoConfig.MultiplicadoDificuldade * ((int)Gerenciador.Instancia.Dificuldade + 1);
+                    tempoReduzido -= Gerenciador.Instancia.ChaoConfig.UnidadeTempo;
+                    if (Gerenciador.Instancia.ChaoConfig.TempoLimite >= tempoReduzido)
                     {
-                        TempoReduzido = Gerenciador.Instancia.ChaoConfig.TempoLimite;
-                        PararDeContarRedutor = true;
+                        tempoReduzido = Gerenciador.Instancia.ChaoConfig.TempoLimite;
+                        pararDeContarRedutor = true;
                     }
-                    Debug.Log(TempoReduzido);
                 }
 
             }
         }
+        private void EscoderChao(int index)
+        {
+            if (this.Propriedades.Escondido[index] && !this.Propriedades.Escondeu[index])
+            {
+                var verficarAtras = false;
+                var verificarAFrente = false;
+                bool pularDesativar = false;
+                for (int j = 1; j < Gerenciador.Instancia.ChaoConfig.LimiteVisinhos + 1; j++)
+                {
+                    if (index - j > 0 && this.Propriedades.Escondeu[index - j])
+                    {
+                        if (verficarAtras)
+                        {
+                            pularDesativar = true;
+                            break;
+                        }
+                        else
+                        {
+                            verficarAtras = true;
+                        }
+                    }
+                    if (index + j < this.Propriedades.Transforms.Count && this.Propriedades.Escondeu[index + j])
+                    {
+                        if (verificarAFrente)
+                        {
+                            pularDesativar = true;
+                            break;
+                        }
+                        else
+                        {
+                            verificarAFrente = true;
+                        }
+                    }
+                }
+                if (!pularDesativar)
+                {
+                    this.Propriedades.Sprites[index].enabled = false;
+                    this.Propriedades.BoxColliders[index].enabled = false;
+                    this.Propriedades.Escondeu[index] = true;
+                }
+                else
+                {
+                    this.Propriedades.Escondido[index] = false;
+                    DefinirChaoParaEsconder();
+                }
+            }
+            else if (this.Propriedades.Escondido[index] && this.Propriedades.Escondeu[index])
+            {
+                this.Propriedades.Sprites[index].enabled = true;
+                this.Propriedades.BoxColliders[index].enabled = true;
+                this.Propriedades.Escondido[index] = false;
+                this.Propriedades.Escondeu[index] = false;
+            }
+
+        }
+        #region Coroutines
+        #endregion
     }
 }

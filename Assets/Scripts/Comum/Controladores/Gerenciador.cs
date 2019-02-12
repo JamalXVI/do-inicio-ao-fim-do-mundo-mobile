@@ -29,6 +29,7 @@ namespace Comum.Controladores
                 Destroy(gameObject);
             }
             DontDestroyOnLoad(gameObject);
+            DontDestroyOnLoad(_ConfigChao.gameObject);
             IniciarVariaveis();
         }
 
