@@ -71,7 +71,7 @@ namespace Comum.Chao
 
 
 
-        void FixedUpdate()
+        void Update()
         {
             CalcularParaOTempoDoChaoDesaparecer();
             novaPosicaoMax = float.MinValue;
